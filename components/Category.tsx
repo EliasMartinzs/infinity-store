@@ -10,7 +10,7 @@ export default function Category() {
   const pathname = usePathname();
   return (
     <div className="h-10 bg-slate-900 max-lg:hidden">
-      <ul className="h-full flex items-center justify-center gap-x-5">
+      <ul className="h-full flex items-center justify-center lg:gap-x-1">
         {categories
           .filter((_, idx) => idx < 10)
           .map((category) => (

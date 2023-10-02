@@ -12,10 +12,51 @@
   @apply flex items-start justify-start;
 }
 
+.flex-end {
+  @apply flex items-center justify-end;
+}
+
 .flex-center {
   @apply flex items-center justify-center;
 }
 
 .flex-between {
   @apply flex items-center justify-between;
+}
+
+.heart {
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s; /* Safari */
+}
+
+.heart:hover {
+  transition-duration: 0.1s;
+}
+
+.heart:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  box-shadow: 0 0 10px 40px white;
+}
+
+.heart:active:after {
+  box-shadow: 0 0 0 0 white;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
+.heart:active {
+  top: 1px;
 }

@@ -1,4 +1,4 @@
-import { selectToggleCart } from "@/redux/slices/selector";
+import { selectToggleIsOpen } from "@/redux/slices/selector";
 import { useSelector } from "@/redux/store";
 import { User } from "lucide-react";
 import { Button } from "./ui/button";
@@ -7,7 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Menu() {
-  const isOpen = useSelector(selectToggleCart);
+  const isOpen = useSelector(selectToggleIsOpen);
 
   return (
     <div

@@ -1,14 +1,14 @@
-import { fetchByCategorie } from "@/lib";
+import { fetchBySearch } from "@/lib";
 import ProductCard from "@/components/ProductCard";
 
-interface Params {
+type Params = {
   params: { id: string };
-}
+};
 
 export default async function page({ params }: Params) {
-  const fetchProducts = await fetchByCategorie(params.id);
+  const searchProducts = await fetchBySearch(params.id);
 
-  const { products } = fetchProducts;
+  const { products } = searchProducts;
 
   return <ProductCard products={products} params={params} />;
 }

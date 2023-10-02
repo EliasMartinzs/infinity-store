@@ -25,27 +25,27 @@ export const mainCategories = [
   {
     title: "laptops",
     icons: "/laptop-2.svg",
-    to: "/laptops",
+    to: "/products/laptops",
   },
   {
     title: "groceries",
     icons: "/store.svg",
-    to: "/groceries",
+    to: "/products/groceries",
   },
   {
     title: "automotive",
     icons: "/car-front.svg",
-    to: "/automotive",
+    to: "/products/automotive",
   },
   {
     title: "mens shirts",
     icons: "/shirt.svg",
-    to: "/mens+shirts",
+    to: "/products/mens-shirts",
   },
   {
     title: "womens bags",
     icons: "/briefcase.svg",
-    to: "/womens+bags",
+    to: "/products/womens-bags",
   },
 ] as const;
 

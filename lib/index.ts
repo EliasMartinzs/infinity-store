@@ -1,4 +1,4 @@
-import { ProductIdParams, ProductsParams } from "@/types";
+import { ProductIdParams, ProductsParams, ProductSearchParams } from "@/types";
 
 export const fetchByCategorie = async (
   category: string
@@ -20,7 +20,9 @@ export const fetchById = async (id: number): Promise<ProductIdParams> => {
   return fetchId;
 };
 
-export const fetchBySearch = async (query: string) => {
+export const fetchBySearch = async (
+  query: string
+): Promise<ProductSearchParams> => {
   const response = await fetch(
     `https://dummyjson.com/products/search?q=${query}`
   );

@@ -2,14 +2,14 @@
 
 import { useDispatch, useSelector } from "@/redux/store";
 import { toggleMenu } from "@/redux/slices/cart.slice";
-import { selectToggleCart } from "@/redux/slices/selector";
+import { selectToggleIsOpen } from "@/redux/slices/selector";
 import { MenuIcon, X } from "lucide-react";
 import Menu from "./Menu";
 import { Fragment } from "react";
 
 export default function ButtonMenu() {
   const dispatch = useDispatch();
-  const isOpen = useSelector(selectToggleCart);
+  const isOpen = useSelector(selectToggleIsOpen);
 
   const openMenu = () => {
     dispatch(toggleMenu(!isOpen));
