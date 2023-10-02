@@ -15,6 +15,7 @@ import {
   favoriteProducts,
   unFavoriteProducts,
 } from "@/redux/slices/favorite.slice";
+import { ToastFavorited } from "./ToastFavorited";
 
 type Params = {
   products: [
@@ -37,7 +38,6 @@ type Params = {
 
 export default function ProductCard({ products, params }: Params) {
   const dispatch = useDispatch();
-  const productFavorited = useSelector(selectIsFavorited);
 
   return (
     <div className="w-full bg-[#ffffff] px-2 md:px-5 lg:px-40">
@@ -59,7 +59,7 @@ export default function ProductCard({ products, params }: Params) {
                 className="object-cover"
               />
               <Heart
-                className="absolute text-red-500 fill-red-500 top-2 right-2 heart"
+                className="absolute text-red-500 hover:fill-red-500 top-2 right-2 heart"
                 onClick={() => dispatch(toggleFavorite(product))}
               />
             </div>
