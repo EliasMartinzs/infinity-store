@@ -1,3 +1,4 @@
+import SwiperMobile from "@/components/SwiperMobile";
 import Thumbs from "@/components/Thumbs";
 import { Button } from "@/components/ui/button";
 import { fetchByCategorie, fetchById } from "@/lib";
@@ -31,7 +32,7 @@ export default async function page({ params }: Params) {
   const { products } = similarProducts;
 
   return (
-    <section className="w-full lg:bg-[#d7d7d7] overflow-hidden lg:px-96 mx-auto">
+    <section className="w-full h-[5000px] lg:bg-[#d7d7d7] overflow-hidden lg:px-20 2xl:px-96 mx-auto">
       <div className="w-full max-xl:hidden py-5 flex-start flex-col">
         <h4 className="flex gap-x-3 text-sm">
           <span className="font-bold">Similar Products:</span>
@@ -45,11 +46,11 @@ export default async function page({ params }: Params) {
             </Link>
           ))}
         </h4>
-        {}
       </div>
-      <div className="w-full bg-[#f7f7f7] rounded-md p-5 grid grid-cols-2 place-items-start max-xl:hidden gap-x-5">
+      <div className="w-full bg-[#f7f7f7] rounded-md p-5 grid grid-cols-2 place-items-start gap-x-5">
         <Thumbs images={images} />
-        <div className="w-full grid grid-cols-2 gap-y-3 gap-x-2">
+        <SwiperMobile images={images} />
+        {/* <div className="w-full grid grid-cols-2 gap-y-3 gap-x-2">
           <div className="w-full">
             <span className="w-full flex-between">
               <small>New Product</small>
@@ -103,7 +104,7 @@ export default async function page({ params }: Params) {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

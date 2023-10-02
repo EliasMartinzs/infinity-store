@@ -8,14 +8,13 @@ export default function Thumbs({ images }: { images: string[] }) {
   const [slider, setSlider] = useState(images[0]);
 
   const handleSlider = (idx: number) => {
-    console.log(idx);
     const sliderImg = images[idx];
 
     setSlider(sliderImg);
   };
 
   return (
-    <div className="w-full flex gap-x-5 flex-start">
+    <div className="w-full flex gap-x-5 flex-start max-lg:hidden">
       <div className="flex relative flex-col gap-y-5">
         {images.map((img, idx) => (
           <Image
@@ -30,7 +29,7 @@ export default function Thumbs({ images }: { images: string[] }) {
         ))}
       </div>
       <div className="w-full h-96 relative order-1">
-        {<Image src={slider} fill alt="s" className="object-fill" />}
+        <Image src={slider} fill alt="s" className="object-fill" />
       </div>
     </div>
   );
