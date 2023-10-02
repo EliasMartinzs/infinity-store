@@ -30,6 +30,12 @@ export function Dropdown() {
   const productCart = useSelector(selectCartItems);
   const dispatch = useDispatch();
 
+  const some = (price: number, quantity: number) => {
+    const newPrice = quantity * price;
+
+    return newPrice.toFixed(2);
+  };
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -61,7 +67,9 @@ export function Dropdown() {
                     <p>
                       {prod.brand} {prod.title}
                     </p>
-                    <span className="font-semibold">${prod.price}</span>
+                    <span className="font-semibold">
+                      ${some(prod.price, prod.quantity)}
+                    </span>
                     <div className="flex-center h-full w-full">
                       <span className="flex-center gap-x-3">
                         <Button

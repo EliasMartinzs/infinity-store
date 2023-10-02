@@ -1,3 +1,5 @@
+import ButtonCart from "@/components/ButtonCart";
+import FavoriteProduct from "@/components/FavoriteProduct";
 import SwiperMobile from "@/components/SwiperMobile";
 import Thumbs from "@/components/Thumbs";
 import { Button } from "@/components/ui/button";
@@ -12,27 +14,14 @@ type Params = {
 
 export default async function page({ params }: Params) {
   const productId = await fetchById(params.id);
-  const {
-    category,
-    images,
-    brand,
-    description,
-    discountPercentage,
-    id,
-    price,
-    rating,
-    stock,
-    title,
-    thumbnail,
-    isFavorited,
-    quantity,
-  } = productId;
+  const { category, images, brand, description, price, rating, stock, title } =
+    productId;
 
   const similarProducts = await fetchByCategorie(category);
   const { products } = similarProducts;
 
   return (
-    <section className="w-full h-[5000px] lg:bg-[#d7d7d7] overflow-hidden lg:px-20 2xl:px-96 mx-auto">
+    <section className="w-full pb-10 lg:bg-[#d7d7d7] overflow-hidden lg:px-20 2xl:px-96 mx-auto">
       <div className="w-full max-xl:hidden py-5 flex-start flex-col">
         <h4 className="flex gap-x-3 text-sm">
           <span className="font-bold">Similar Products:</span>
@@ -47,14 +36,14 @@ export default async function page({ params }: Params) {
           ))}
         </h4>
       </div>
-      <div className="w-full bg-[#f7f7f7] rounded-md p-5 grid grid-cols-2 place-items-start gap-x-5">
+      {/* // xl screen */}
+      <div className="w-full bg-[#f7f7f7] rounded-md p-5 xl:grid grid-cols-2 place-items-start gap-x-5 max-xl:hidden">
         <Thumbs images={images} />
-        <SwiperMobile images={images} />
-        {/* <div className="w-full grid grid-cols-2 gap-y-3 gap-x-2">
+        <div className="w-full grid grid-cols-2 gap-y-3 gap-x-2 ">
           <div className="w-full">
             <span className="w-full flex-between">
               <small>New Product</small>
-              <Heart />
+              <FavoriteProduct product={productId} />
             </span>
 
             <div className="w-full">
@@ -85,9 +74,7 @@ export default async function page({ params }: Params) {
               Only {stock} left in stock - order soon
             </p>
             <div className="flex flex-col gap-y-3">
-              <Button className="bg-slate-600 px-10 rounded-full">
-                Add to Cart
-              </Button>
+              <ButtonCart product={productId} />
               <Button className="bg-slate-950 px-10 rounded-full">
                 Buy Now
               </Button>
@@ -104,7 +91,50 @@ export default async function page({ params }: Params) {
               </div>
             </div>
           </div>
-        </div> */}
+        </div>
+      </div>
+      {/* // xs screen */}
+      <div className="w-full bg-[#f7f7f7] lg:hidden px-2 py-5 flex flex-col gap-y-3">
+        <div className="w-full flex-between font-extralight">
+          <p>New Product</p>
+          <span className="flex items-center gap-x-3">
+            <p>{rating}</p>
+            <Rating size="small" value={rating} readOnly />
+          </span>
+        </div>
+
+        <div className="flex-start flex-col">
+          <h3 className="capitalize text-lg">
+            {brand} {title}
+          </h3>
+        </div>
+
+        <SwiperMobile images={images} />
+
+        <div className="w-full mt-5">
+          <div className="flex-between">
+            <h3 className="text-3xl">${price.toFixed(2)}</h3>
+            <FavoriteProduct product={productId} />
+          </div>
+
+          <p className="">
+            in{" "}
+            <span className="text-green-800">
+              10 interest-free installments
+            </span>
+          </p>
+
+          <h4 className="mt-5 text-lg">
+            <span className="font-semibold text-green-800">Delivery</span> free
+          </h4>
+
+          <div className="w-full flex-center flex-col md:flex-row md:gap-x-5 mt-5 gap-y-3">
+            <ButtonCart product={productId} />
+            <Button className="bg-slate-950 w-full rounded-full py-7">
+              Buy Now
+            </Button>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -60,7 +60,7 @@ export default function ProductCard({ products, params }: Params) {
               />
               <Heart
                 className="absolute text-red-500 hover:fill-red-500 top-2 right-2 heart"
-                onClick={() => dispatch(toggleFavorite(product))}
+                onClick={() => dispatch(favoriteProducts(product))}
               />
             </div>
             <div className="flex-start flex-col gap-y-1 lg:px-2">
