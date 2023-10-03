@@ -35,7 +35,7 @@ export default function Menu() {
         </div>
       </div>
 
-      <div className="w-full flex-start flex-col gap-y-2 px-4">
+      <div className="w-full flex-start flex-col gap-y-2 p-4">
         {linksMenu.map((link) => (
           <Link
             href={link.to}
@@ -48,7 +48,7 @@ export default function Menu() {
         ))}
       </div>
 
-      <div className="w-full flex-start flex-col gap-y-2">
+      <div className="w-full flex-start flex-col gap-y-2 py-4">
         <h3 className="font-semibold text-xl px-4">Main Categories</h3>
 
         {mainCategories.map((cat) => (
