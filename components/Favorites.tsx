@@ -42,9 +42,7 @@ export default function Favorites() {
                   <p>
                     {prod.brand} {prod.title}
                   </p>
-                  <span className="font-semibold">
-                    {/* ${someFees(prod.price, prod.quantity)} */}
-                  </span>
+                  <span className="font-semibold"></span>
                 </div>
               </div>
             ))}

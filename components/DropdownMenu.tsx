@@ -74,9 +74,7 @@ export function Dropdown() {
                     <p>
                       {prod.brand} {prod.title}
                     </p>
-                    <span className="font-semibold">
-                      {/* ${some(prod.price, prod.quantity)} */}
-                    </span>
+                    <span className="font-semibold"></span>
                     <div className="flex-center h-full w-full">
                       <span className="flex-center gap-x-3">
                         <Button
