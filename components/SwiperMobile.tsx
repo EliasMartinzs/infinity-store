@@ -6,29 +6,31 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 // import required modules
-import { Pagination, Navigation } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 import Image from "next/image";
 
 export default function SwiperMobile({ images }: { images: string[] }) {
   return (
-    <div className="-z-50 relative">
+    <>
       <Swiper
-        pagination
-        modules={[Pagination, Navigation]}
-        navigation
-        className="w-full h-96 max-lg:hidden mix-blend-multiply -z-50 relative"
+        pagination={{
+          dynamicBullets: true,
+        }}
+        modules={[Pagination]}
+        className="w-full h-96 max-lg:hidden"
       >
         {images.map((img) => (
-          <SwiperSlide className="w-full h-96 relative" key={img}>
+          <SwiperSlide key={img}>
             <Image
               src={img}
-              fill
+              width={500}
+              height={500}
               alt="img"
-              className="object-cover object-center saturate-200"
+              className="object-contain"
             />
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </>
   );
 }
