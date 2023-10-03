@@ -2,7 +2,7 @@
 
 import { useDispatch, useSelector } from "@/redux/store";
 import { Button } from "./ui/button";
-import { toggleFavorite } from "@/redux/slices/cart.slice";
+import { addToCart } from "@/redux/slices/cart.slice";
 import { selectCartItems } from "@/redux/slices/selector";
 
 type Params = {
@@ -29,7 +29,7 @@ export default function ButtonCart({ product }: Params) {
   return (
     <Button
       className="rounded-full w-full py-7 xl:py-0"
-      onClick={() => dispatch(toggleFavorite(product))}
+      onClick={() => dispatch(addToCart(product))}
     >
       Add to Cart
     </Button>

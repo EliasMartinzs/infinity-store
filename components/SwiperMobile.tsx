@@ -11,24 +11,24 @@ import Image from "next/image";
 
 export default function SwiperMobile({ images }: { images: string[] }) {
   return (
-    <>
+    <div className="-z-50 relative">
       <Swiper
         pagination
         modules={[Pagination, Navigation]}
         navigation
-        className="w-full h-72 md:h-96 max-lg:hidden mix-blend-multiply"
+        className="w-full h-96 max-lg:hidden mix-blend-multiply -z-50 relative"
       >
         {images.map((img) => (
-          <SwiperSlide className="w-full h-full" key={img}>
+          <SwiperSlide className="w-full h-96 relative" key={img}>
             <Image
               src={img}
               fill
               alt="img"
-              className="object-contain object-center"
+              className="object-cover object-center saturate-200"
             />
           </SwiperSlide>
         ))}
       </Swiper>
-    </>
+    </div>
   );
 }

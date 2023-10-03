@@ -2,12 +2,11 @@
 
 import { someFees } from "@/lib/utils";
 import React, { useState } from "react";
-import RatingStar from "./RatingStar";
 import Link from "next/link";
 import Image from "next/image";
 import FavoriteProduct from "./FavoriteProduct";
 import { Heart, HeartCrack } from "lucide-react";
-import { toggleFavorite } from "@/redux/slices/cart.slice";
+
 import { useDispatch, useSelector } from "@/redux/store";
 import { selectCartItems, selectIsFavorited } from "@/redux/slices/selector";
 import { ProductIdParams } from "@/types";
@@ -15,7 +14,6 @@ import {
   favoriteProducts,
   unFavoriteProducts,
 } from "@/redux/slices/favorite.slice";
-import { ToastFavorited } from "./ToastFavorited";
 
 type Params = {
   products: [
@@ -70,7 +68,6 @@ export default function ProductCard({ products, params }: Params) {
               >
                 {product?.brand} {product?.title}
               </Link>
-              <RatingStar rating={product?.rating} />
               <p className="font-semibold lg:text-xl">
                 ${product?.price.toFixed(2)}
               </p>

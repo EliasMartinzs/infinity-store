@@ -60,3 +60,11 @@
 .heart:active {
   top: 1px;
 }
+
+.swiper-button-prev::after {
+  @apply text-slate-950;
+}
+
+.swiper-button-next::after {
+  @apply text-slate-950;
+}

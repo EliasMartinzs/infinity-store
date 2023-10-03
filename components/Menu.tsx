@@ -35,12 +35,12 @@ export default function Menu() {
         </div>
       </div>
 
-      <div className="w-full flex-start flex-col gap-y-2">
+      <div className="w-full flex-start flex-col gap-y-2  px-4">
         {linksMenu.map((link) => (
           <Link
             href={link.to}
             key={link.title}
-            className="flex flex-row gap-x-3 py-2 hover:bg-slate-100 w-full px-4 hover:text-blue-600"
+            className="flex flex-row gap-x-3 py-2 hover:bg-slate-100 w-full hover:text-blue-600"
           >
             <Image src={link.icon} alt={link.title} width={22} height={22} />
             <span>{link.title}</span>

@@ -72,7 +72,7 @@ export const cart = createSlice({
     toggleMenu: (state, action) => {
       return void (state.isOpen = action.payload);
     },
-    toggleFavorite: (state, action) => {
+    addToCart: (state, action) => {
       return void (state.cartItem = addProductToCart(
         state.cartItem,
         action.payload
@@ -101,7 +101,7 @@ export const cart = createSlice({
 
 export const {
   toggleMenu,
-  toggleFavorite,
+  addToCart,
   decreaseQuantity,
   removeAllItem,
   increaseQuantity,

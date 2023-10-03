@@ -1,6 +1,5 @@
 "use client";
 
-import { toggleFavorite } from "@/redux/slices/cart.slice";
 import { favoriteProducts } from "@/redux/slices/favorite.slice";
 import { useDispatch } from "@/redux/store";
 import { Heart } from "lucide-react";

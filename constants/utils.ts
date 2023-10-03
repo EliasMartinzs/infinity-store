@@ -71,3 +71,21 @@ export const linksMenu = [
     to: "/contact",
   },
 ] as const;
+
+export const mainProducts = [
+  {
+    title: "Laptops",
+    img: "/laptop.webp",
+    to: "/products/laptop",
+  },
+  {
+    title: "Automotive",
+    img: "/automotive.webp",
+    to: "/products/automotive",
+  },
+  {
+    title: "Watches",
+    img: "/watches.webp",
+    to: "/products/mens-watches",
+  },
+];

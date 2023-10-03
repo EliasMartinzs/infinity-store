@@ -20,10 +20,10 @@ export default function Navigation() {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-slate-900 text-white hover:bg-slate-700">
+          <NavigationMenuTrigger className="bg-slate-900 text-white hover:bg-slate-700 z-50">
             All Categories
           </NavigationMenuTrigger>
-          <NavigationMenuContent className="">
+          <NavigationMenuContent className="z-50 absolute">
             {categories
               .filter((_, idx) => idx > 10)
               .map((category) => (

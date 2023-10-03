@@ -31,3 +31,11 @@ export const fetchBySearch = async (
 
   return fetchSearch;
 };
+
+export const fetchAllProucts = async (): Promise<ProductsParams> => {
+  const response = await fetch(`https://dummyjson.com/products`);
+
+  const fetchAll = await response.json();
+
+  return fetchAll;
+};

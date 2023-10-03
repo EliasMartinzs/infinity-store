@@ -4,8 +4,10 @@ import { useState } from "react";
 import { Input } from "./ui/input";
 import { SearchIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { twMerge } from "tailwind-merge";
+import { cn } from "@/lib/utils";
 
-export default function Search() {
+export default function Search({ classname }: { classname: string }) {
   const [query, setQuery] = useState("");
   const router = useRouter();
 
@@ -20,10 +22,17 @@ export default function Search() {
   };
 
   return (
-    <div className="relative flex flex-row items-center bg-slate-900 rounded-xl cursor-pointer hover:bg-slate-800">
+    <div
+      className={twMerge(
+        "relative flex flex-row items-center rounded-xl cursor-pointer hover:bg-slate-800"
+      )}
+    >
       <Input
-        className="w-48 h-8 md:w-72 md:h-10 lg:w-[700px] outline-none placeholder:text-slate-600 focus:border-slate-950 rounded-none bg-slate-200"
-        placeholder="Buscar Produtos"
+        className={cn(
+          "outline-none placeholder:text-slate-600 focus:border-slate-950 rounded-none bg-slate-200",
+          classname
+        )}
+        placeholder="Search Products"
         value={query}
         onChange={(e) => setQuery(e.target.value.toLowerCase())}
       />

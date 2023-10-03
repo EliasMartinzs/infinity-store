@@ -8,6 +8,7 @@ import {
 import { someFees } from "@/lib/utils";
 import { selectIsFavorited } from "@/redux/slices/selector";
 import { useSelector } from "@/redux/store";
+import { twMerge } from "tailwind-merge";
 
 import { LucideHeart } from "lucide-react";
 import Image from "next/image";
@@ -18,7 +19,7 @@ export default function Favorites() {
   return (
     <Popover>
       <PopoverTrigger>
-        <LucideHeart className="fill-white text-white cursor-pointer" />
+        <LucideHeart className="text-white fill-white" />
       </PopoverTrigger>
       <PopoverContent className="flex flex-col gap-y-5">
         {favoritesProducts.length === 0 ? (

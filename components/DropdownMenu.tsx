@@ -1,5 +1,13 @@
 "use client";
-import { Minus, Plus, ShoppingCart, Trash2 } from "lucide-react";
+import {
+  Minus,
+  Plus,
+  ShoppingBag,
+  ShoppingBagIcon,
+  ShoppingCart,
+  ShoppingCartIcon,
+  Trash2,
+} from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -22,7 +30,6 @@ import Image from "next/image";
 import {
   removeAllItem,
   decreaseQuantity,
-  toggleFavorite,
   increaseQuantity,
 } from "@/redux/slices/cart.slice";
 
@@ -39,8 +46,8 @@ export function Dropdown() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button className="bg-slate-950 hover:bg-slate-900 transition-colors">
-          <ShoppingCart className="text-white" />
+        <Button className="bg-slate-950 hover:bg-slate-900 transition-colors px-0">
+          <ShoppingCartIcon className="text-white" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
