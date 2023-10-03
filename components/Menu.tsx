@@ -11,7 +11,7 @@ export default function Menu() {
 
   return (
     <div
-      className={`w-full absolute z-[999] top-16 bg-white ease-in-out overflow-hidden ${
+      className={`w-full h-[100svh] absolute z-[999] top-16 bg-white ease-in-out overflow-hidden ${
         isOpen ? "left-0" : "-left-[999px]"
       }`}
     >
