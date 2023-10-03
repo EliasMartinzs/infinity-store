@@ -17,17 +17,11 @@ export default function SwiperMobile({ images }: { images: string[] }) {
           dynamicBullets: true,
         }}
         modules={[Pagination]}
-        className="w-full h-96 max-lg:hidden"
+        className="w-full h-[400px] relative max-lg:hidden"
       >
         {images.map((img) => (
           <SwiperSlide key={img}>
-            <Image
-              src={img}
-              width={500}
-              height={500}
-              alt="img"
-              className="object-contain"
-            />
+            <Image src={img} fill alt="img" className="object-cover" />
           </SwiperSlide>
         ))}
       </Swiper>
