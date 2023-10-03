@@ -11,7 +11,7 @@ export default function Menu() {
 
   return (
     <div
-      className={`w-full absolute top-20 z-50 transition ease-in-out delay-150 bg-white space-y-3 overflow-hidden ${
+      className={`w-full absolute z-[999] top-16 bg-white ease-in-out overflow-hidden ${
         isOpen ? "left-0" : "-left-[999px]"
       }`}
     >
@@ -35,7 +35,7 @@ export default function Menu() {
         </div>
       </div>
 
-      <div className="w-full flex-start flex-col gap-y-2  px-4">
+      <div className="w-full flex-start flex-col gap-y-2 px-4">
         {linksMenu.map((link) => (
           <Link
             href={link.to}
