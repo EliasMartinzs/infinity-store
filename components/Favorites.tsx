@@ -5,10 +5,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { someFees } from "@/lib/utils";
 import { selectIsFavorited } from "@/redux/slices/selector";
 import { useSelector } from "@/redux/store";
-import { twMerge } from "tailwind-merge";
 
 import { LucideHeart } from "lucide-react";
 import Image from "next/image";

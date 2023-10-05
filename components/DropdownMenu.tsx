@@ -14,14 +14,8 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
-  DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuPortal,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useDispatch, useSelector } from "@/redux/store";
@@ -32,16 +26,11 @@ import {
   decreaseQuantity,
   increaseQuantity,
 } from "@/redux/slices/cart.slice";
+import Link from "next/link";
 
 export function Dropdown() {
   const productCart = useSelector(selectCartItems);
   const dispatch = useDispatch();
-
-  const some = (price: number, quantity: number) => {
-    const newPrice = quantity * price;
-
-    return newPrice.toFixed(2);
-  };
 
   return (
     <DropdownMenu>
@@ -105,14 +94,15 @@ export function Dropdown() {
               ))}
             </>
           )}
-          {productCart.length === 0 ? null : (
+
+          <Link href="/my-cart">
             <Button
               className="my-5 hover:underline underline-offset-4"
               variant="ghost"
             >
               Cart Details
             </Button>
-          )}
+          </Link>
         </DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>

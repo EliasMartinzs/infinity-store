@@ -3,7 +3,6 @@
 import { favoriteProducts } from "@/redux/slices/favorite.slice";
 import { useDispatch } from "@/redux/store";
 import { Heart } from "lucide-react";
-import { useState } from "react";
 
 type Params = {
   product: {

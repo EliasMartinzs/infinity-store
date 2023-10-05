@@ -4,7 +4,6 @@ import ButtonMenu from "./ButtonMenu";
 
 import Search from "./Search";
 import Category from "./Category";
-import { LucideHeart } from "lucide-react";
 import Favorites from "./Favorites";
 
 export default function Header() {

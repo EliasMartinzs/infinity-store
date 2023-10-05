@@ -1,19 +1,13 @@
 "use client";
 
 import { someFees } from "@/lib/utils";
-import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import FavoriteProduct from "./FavoriteProduct";
-import { Heart, HeartCrack } from "lucide-react";
+import { Heart } from "lucide-react";
 
-import { useDispatch, useSelector } from "@/redux/store";
-import { selectCartItems, selectIsFavorited } from "@/redux/slices/selector";
-import { ProductIdParams } from "@/types";
-import {
-  favoriteProducts,
-  unFavoriteProducts,
-} from "@/redux/slices/favorite.slice";
+import { useDispatch } from "@/redux/store";
+
+import { favoriteProducts } from "@/redux/slices/favorite.slice";
 
 type Params = {
   products: [
