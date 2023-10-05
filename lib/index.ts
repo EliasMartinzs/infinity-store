@@ -32,7 +32,7 @@ export const fetchBySearch = async (
   return fetchSearch;
 };
 
-export const fetchAllProucts = async (): Promise<ProductsParams> => {
+export const fetchAllProucts = async () => {
   const response = await fetch(`https://dummyjson.com/products`);
 
   const fetchAll = await response.json();

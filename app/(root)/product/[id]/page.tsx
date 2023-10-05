@@ -21,7 +21,7 @@ export default async function page({ params }: Params) {
   const { products } = similarProducts;
 
   return (
-    <section className="w-full pb-10 lg:bg-[#d7d7d7] overflow-hidden lg:px-20 2xl:px-96 mx-auto">
+    <section className="w-full min-h-screen pb-10 lg:bg-[#d7d7d7] overflow-hidden lg:px-20 2xl:px-96 mx-auto">
       <div className="w-full max-xl:hidden py-5 flex-start flex-col">
         <h4 className="flex gap-x-3 text-sm">
           <span className="font-bold">Similar Products:</span>

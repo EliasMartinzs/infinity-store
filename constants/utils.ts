@@ -76,7 +76,7 @@ export const mainProducts = [
   {
     title: "Laptops",
     img: "/laptop.webp",
-    to: "/products/laptop",
+    to: "/products/laptops",
   },
   {
     title: "Automotive",
@@ -88,4 +88,52 @@ export const mainProducts = [
     img: "/watches.webp",
     to: "/products/mens-watches",
   },
-];
+  {
+    title: "Fragrances",
+    img: "/fragrances.jpg",
+    to: "/products/fragrances",
+  },
+] as const;
+
+export const categoriesPopular = [
+  {
+    categorie: "Smartphones",
+    icon: "/icons/smartphone.svg",
+    to: "/products/smartphones",
+  },
+  {
+    categorie: "Motorcycle",
+    icon: "/icons/bike.svg",
+    to: "/products/motorcycle",
+  },
+  {
+    categorie: "Automotive",
+    icon: "/icons/car.svg",
+    to: "/products/automotive",
+  },
+  {
+    categorie: "Shoes",
+    icon: "/icons/footprints.svg",
+    to: "/products/mens-shoes",
+  },
+  {
+    categorie: "Home Decorations",
+    icon: "/icons/home.svg",
+    to: "/products/home-decoration",
+  },
+  {
+    categorie: "Laptops",
+    icon: "/icons/laptop.svg",
+    to: "/products/laptops",
+  },
+  {
+    categorie: "Shirt",
+    icon: "/icons/shirt.svg",
+    to: "/products/mens-shirts",
+  },
+  {
+    categorie: "Watches",
+    icon: "/icons/watch.svg",
+    to: "/products/mens-watches",
+  },
+] as const;
